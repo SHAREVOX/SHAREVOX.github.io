@@ -18,3 +18,21 @@ a {
 * {
   box-sizing: border-box;
 }
+
+@layer components {
+  .desc-card-w {
+    width: calc(66.666667% + 4rem)
+  }
+
+  @media (min-width: 768px) {
+    .desc-card-w {
+      @apply w-2/3;
+    }
+  }
+
+  @media (min-width: 1280px) {
+    .desc-card-w {
+      @apply w-1/3;
+    }
+  }
+}
