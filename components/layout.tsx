@@ -5,14 +5,14 @@ import Header from '@/components/header'
 
 type Props = {
   title: string
-  children?: React.ReactNode
+  children: React.ReactNode
 }
 
 const Layout: React.FC<Props> = ({ title, children }) => {
   return (
     <>
       <Head>
-        <title>{`SHAREVOX{title.length > 0 && ' | ' + title}`}</title>
+        <title>{`SHAREVOX${title.length > 0 && ' | ' + title}`}</title>
         <meta
           name="description"
           content="無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX"
@@ -22,6 +22,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
         <Header mainPageHeader={false} />
       </Head>
 
+      {/* ref: https://tailwindcss.com/docs/installation */}
       <main
         style={{
           background: '#FAF5F0',

@@ -15,7 +15,8 @@ a {
   text-decoration: none;
 }
 
-/* ref: http://zuga.net/articles/html-heading-elements/ */
+/* Tailwindの影響でh1等のタグが有効化されていなかったので、以下の記事を参考によしなにfont-sizeを設定した
+ref: http://zuga.net/articles/html-heading-elements/ */
 h1 {
   font-size: 2em;
   font-weight: bolder;
