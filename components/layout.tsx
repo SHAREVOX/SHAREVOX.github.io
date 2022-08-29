@@ -19,6 +19,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
 
+        {/* 常時ヘッダーを表示していたいので、常にfalseにしておく */}
         <Header mainPageHeader={false} />
       </Head>
 
