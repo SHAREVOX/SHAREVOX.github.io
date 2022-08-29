@@ -52,6 +52,7 @@ const Home: NextPage = () => {
 
   return (
     <>
+      {/* トップページはヘッダの扱いが特殊なので、Layoutを利用しない */}
       <Head>
         <title>SHAREVOX</title>
         <meta

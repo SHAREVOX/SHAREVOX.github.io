@@ -55,7 +55,7 @@ const Header: React.FC<Props> = ({ mainPageHeader }) => {
       <div className={menuClass}>
         <ul className="md:flex md:py-2 w-full md:items-center">
           <li className="border-b md:border-none">
-            <a href="#" className={headerButtonClass}>
+            <a href="/terms" className={headerButtonClass}>
               利用規約
             </a>
           </li>

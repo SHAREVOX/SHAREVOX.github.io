@@ -15,6 +15,25 @@ a {
   text-decoration: none;
 }
 
+/* ref: http://zuga.net/articles/html-heading-elements/ */
+h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  margin: 0.4em auto;
+}
+
+h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin: 0.3em auto;
+}
+
+h3 {
+  font-size: 1.17em;
+  font-weight: bolder;
+    margin: 0.2em auto;
+}
+
 * {
   box-sizing: border-box;
 }
