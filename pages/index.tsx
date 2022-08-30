@@ -63,11 +63,7 @@ const Home: NextPage = () => {
 
       <Header mainPageHeader={absoluteHeader} />
 
-      <main
-        style={{
-          background: '#FAF5F0',
-        }}
-      >
+      <main>
         <div
           ref={firstViewRef}
           style={{
