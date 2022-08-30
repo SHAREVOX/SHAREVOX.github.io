@@ -4,7 +4,7 @@ import config from '@/config'
 
 const Footer: React.FC = () => {
   return (
-    <footer className="flex flex-wrap-reverse gmd:justify-center bg-primary text-white pt-12 pb-4 px-10 md:px-40">
+    <footer className="flex flex-wrap-reverse gmd:justify-center bg-primary text-white pt-12 pb-4 px-10 md:px-40 2xl:text-xl">
       <div className="flex items-end justify-start mr-auto">
         <p className="opacity-60">&copy; 2022 SHAREVOX</p>
       </div>
