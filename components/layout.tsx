@@ -24,20 +24,8 @@ const Layout: React.FC<Props> = ({ title, children }) => {
       </Head>
 
       {/* ref: https://tailwindcss.com/docs/installation */}
-      <main
-        style={{
-          background: '#FAF5F0',
-        }}
-        className="pt-16 pb-10"
-      >
-        <div
-          style={{
-            background: '#ffffff',
-          }}
-          className="mx-16 mt-5 py-5 rounded-lg"
-        >
-          {children}
-        </div>
+      <main className="pt-16 pb-10 2xl:pt-24">
+        <div className="mx-16 mt-5 py-5 rounded-lg bg-white">{children}</div>
       </main>
       <Footer />
     </>
