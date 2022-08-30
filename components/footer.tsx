@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
       </div>
       <div className="md:ml-auto flex flex-row">
         <div className="mr-10 my-2 text-left">
-          <p className="opacity-40">Menu</p>
+          <p className="opacity-40 mb-4">Menu</p>
           <div className="flex flex-col">
             <a href="#" className="">
               利用規約
@@ -24,7 +24,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
         <div className="ml-10 my-2 text-left">
-          <p className="opacity-40">Links</p>
+          <p className="opacity-40 mb-4">Links</p>
           <div className="flex flex-col">
             <a href={config.GITHUB_ORG_URL} className="">
               GitHub
