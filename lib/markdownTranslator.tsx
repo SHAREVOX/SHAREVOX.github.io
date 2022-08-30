@@ -9,7 +9,10 @@ const markdownToHtml = async (markdownText: string): Promise<string> => {
     .use(remarkParse) // markdown -> mdast の変換
     .use(remark2rehype) // mdast -> hast の変換
     .use(addClasses, {
-      a: 'text-blue-600 hover:text-blue-800 visited:text-purple-600',
+      // TODO: fix here
+      // 色は変わるのでひとまずこれで
+      // ref: https://github.com/SHAREVOX/SHAREVOX.github.io/issues/2#issuecomment-1231365168
+      a: 'text-primary',
     })
     .use(rehypeStringify) // hast -> html の変換
     .process(markdownText)
