@@ -10,6 +10,10 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
         href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500&display=swap"
         rel="stylesheet"
       />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap"
+        rel="stylesheet"
+      />
       <Component {...pageProps} />
     </>
   )
