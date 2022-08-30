@@ -6,7 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, "Noto Sans JP", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: -apple-system, Roboto, "Noto Sans JP", BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
