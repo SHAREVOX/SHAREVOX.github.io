@@ -1,27 +1,16 @@
-import Head from 'next/head'
-
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 
 type Props = {
-  title: string
+  title?: string
   children: React.ReactNode
 }
 
 const Layout: React.FC<Props> = ({ title, children }) => {
   return (
     <>
-      <Head>
-        <title>{`SHAREVOX${title.length > 0 && ' | ' + title}`}</title>
-        <meta
-          name="description"
-          content="無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX"
-        />
-        <link rel="icon" href="/favicon.ico" />
-
-        {/* 常時ヘッダーを表示していたいので、常にfalseにしておく */}
-        <Header mainPageHeader={false} />
-      </Head>
+      {/* 常時ヘッダーを表示していたいので、常にfalseにしておく */}
+      <Header mainPageHeader={false} title={title} />
 
       {/* ref: https://tailwindcss.com/docs/installation */}
       <main className="pt-16 pb-10 2xl:pt-24">
