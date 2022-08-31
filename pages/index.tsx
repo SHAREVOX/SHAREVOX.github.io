@@ -72,7 +72,7 @@ const Home: NextPage = () => {
       const { left: finalFeatureCardLeft, width: finalFeatureCardWidth } =
         finalFeatureCard.getBoundingClientRect()
       setDecoration1Left(finalFeatureCardLeft + finalFeatureCardWidth - 50)
-      setDecoration3Left(window.screen.width - 400)
+      setDecoration3Left(window.innerWidth - 400)
     }
     onResize()
     window.addEventListener('resize', onResize)
