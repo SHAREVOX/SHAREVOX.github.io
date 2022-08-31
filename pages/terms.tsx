@@ -1,5 +1,5 @@
 import fs from 'fs'
-import { NextPage } from 'next/types'
+import { NextPageWithLayout } from 'next'
 
 import Layout from '@/components/layout'
 import markdownToHtml from '@/lib/markdownTranslator'
@@ -20,17 +20,12 @@ type Props = {
   htmlContent: string
 }
 
-const Terms: NextPage<Props> = ({ htmlContent }) => {
+const Terms: NextPageWithLayout<Props> = ({ htmlContent }) => {
   return (
-    <>
-      <Layout title="利用規約">
-        <div
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-          className="mx-10"
-        />
-      </Layout>
-    </>
+    <div dangerouslySetInnerHTML={{ __html: htmlContent }} className="mx-10" />
   )
 }
+
+Terms.getLayout = (page) => <Layout title="利用規約">{page}</Layout>
 
 export default Terms
