@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
+import firstViewImage from '@/public/sharevox-first-view.png'
+
 type Props = {
   mainPageHeader: boolean
   title?: string
@@ -30,13 +32,16 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
   const downloadButtonClass = `md:mx-2 my-4 gmd:text-center rounded font-semibold py-2 px-4 2xl:px-6 2xl:py-3 ${
     mainPageHeader ? 'text-white bg-primary' : 'text-primary bg-white'
   }`
+  const embeddedTitle = title
+    ? `${title.length > 0 && title} | SHAREVOX`
+    : `SHAREVOX`
+  const description =
+    '無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX'
 
   return (
     <>
       <Head>
-        <title>
-          {title ? `SHAREVOX | ${title.length > 0 && title}` : `SHAREVOX`}
-        </title>
+        <title>{embeddedTitle}</title>
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -66,11 +71,16 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
           content="/favicons/browserconfig.xml"
         />
         <meta name="theme-color" content="#ffffff" />
-        <meta
-          name="description"
-          content="無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX"
-        />
-        <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content={description} />
+        <link rel="icon" href="/favicons/favicon.ico" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <meta property="og:url" content="https://sharevox.app" />
+        <meta property="og:title" content={embeddedTitle} />
+        <meta property="og:site_name" content="SHAREVOX" />
+        <meta property="og:description" content={description} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={firstViewImage.src} />
+        <meta property="twitter:image" content={firstViewImage.src} />
       </Head>
 
       <header className={headerClass}>
