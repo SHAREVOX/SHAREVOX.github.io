@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="mr-10 my-2 text-left">
           <p className="opacity-40 mb-4">Menu</p>
           <div className="flex flex-col">
-            <a href="#" className="">
+            <a href="/terms" className="">
               利用規約
             </a>
             <a href="#" className="">

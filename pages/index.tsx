@@ -81,15 +81,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>SHAREVOX</title>
-        <meta
-          name="description"
-          content="無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      {/* トップページはヘッダの扱いが特殊なので、Layoutを利用しない */}
       <Header mainPageHeader={absoluteHeader} />
 
       <main>

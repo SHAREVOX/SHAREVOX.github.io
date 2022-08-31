@@ -15,6 +15,51 @@ a {
   text-decoration: none;
 }
 
+/* Markdown -> HTML で生成された場所用 */
+/* Tailwindの影響でh1等のタグが有効化されていなかったので、以下の記事を参考によしなにfont-sizeを設定した
+ref: http://zuga.net/articles/html-heading-elements/ */
+main {
+  background: #FAF5F0;
+  overflow: hidden;
+}
+
+main h1 {
+  font-size: 2em;
+  font-weight: bolder;
+  margin: 0.4em auto;
+}
+
+main h2 {
+  font-size: 1.5em;
+  font-weight: bolder;
+  margin: 0.3em auto;
+}
+
+main h3 {
+  font-size: 1.17em;
+  font-weight: bolder;
+  margin: 0.2em auto;
+}
+
+main ol li {
+  list-style-type: decimal;
+  margin-left: 1em;
+}
+
+main ol li .flex {
+  display: flex;
+}
+
+
+main ul li {
+  list-style-type: disc;
+  margin-left: 1em;
+}
+
+main ul li .flex {
+  display: flex;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -35,9 +80,4 @@ a {
       @apply w-1/3;
     }
   }
-}
-
-main {
-  background: #FAF5F0;
-  overflow: hidden;
 }
