@@ -72,7 +72,7 @@ const Home: NextPage = () => {
       const { left: finalFeatureCardLeft, width: finalFeatureCardWidth } =
         finalFeatureCard.getBoundingClientRect()
       setDecoration1Left(finalFeatureCardLeft + finalFeatureCardWidth - 50)
-      setDecoration3Left(window.screen.width - 400)
+      setDecoration3Left(window.innerWidth - 400)
     }
     onResize()
     window.addEventListener('resize', onResize)
@@ -147,12 +147,13 @@ const Home: NextPage = () => {
           className="text-center"
           style={{
             paddingTop: featurePaddingSize,
+            paddingBottom: 30,
           }}
         >
           <p className="text-3xl md:text-4xl 2xl:text-5xl font-semibold">
             特徴
           </p>
-          <p className="text-xl 2xl:text-2xl font-semibold">feature</p>
+          <p className="text-xl 2xl:text-2xl font-semibold">FEATURE</p>
         </div>
         <div>
           <div

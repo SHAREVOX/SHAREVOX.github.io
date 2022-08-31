@@ -45,34 +45,27 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href="/favicons/apple-touch-icon.png"
+          href="/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/favicons/favicon-32x32.png"
+          href="/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="/favicons/favicon-16x16.png"
+          href="/favicon-16x16.png"
         />
-        <link rel="manifest" href="/favicons/site.webmanifest" />
-        <link
-          rel="mask-icon"
-          href="/favicons/safari-pinned-tab.svg"
-          color="#5bbad5"
-        />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
         <meta name="msapplication-TileColor" content="#da532c" />
-        <meta
-          name="msapplication-config"
-          content="/favicons/browserconfig.xml"
-        />
+        <meta name="msapplication-config" content="/browserconfig.xml" />
         <meta name="theme-color" content="#ffffff" />
         <meta name="description" content={description} />
-        <link rel="icon" href="/favicons/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
         <meta property="og:url" content="https://sharevox.app" />
         <meta property="og:title" content={embeddedTitle} />
@@ -80,14 +73,18 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={firstViewImage.src} />
-        <meta property="twitter:image" content={firstViewImage.src} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={firstViewImage.src} />
+        <meta name="twitter:title" content="SHAREVOX" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:domain" content="www.sharevox.app" />
       </Head>
 
       <header className={headerClass}>
         <div className="px-4 flex justify-between items-center">
           <h1 className="text-xl 2xl:text-3xl font-semibold py-2">
             <Link href="/" className="decoration-0">
-              SHAREVOX
+              <a>SHAREVOX</a>
             </Link>
           </h1>
           <div className="md:hidden">
@@ -108,19 +105,19 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <div className={menuClass}>
           <ul className="md:flex md:py-2 w-full md:items-center">
             <li className="border-b md:border-none">
-              <a href="/terms" className={headerButtonClass}>
-                利用規約
-              </a>
+              <Link href="/terms">
+                <a className={headerButtonClass}>利用規約</a>
+              </Link>
             </li>
             <li className="border-b md:border-none">
-              <a href="#" className={headerButtonClass}>
-                キャラクター一覧
-              </a>
+              <Link href="#">
+                <a className={headerButtonClass}>キャラクター一覧</a>
+              </Link>
             </li>
             <li className="border-b md:border-none">
-              <a href="/release-notes" className={headerButtonClass}>
-                更新履歴
-              </a>
+              <Link href="/release-notes">
+                <a className={headerButtonClass}>更新履歴</a>
+              </Link>
             </li>
             <li>
               <div className="my-2 gmd:my-4 text-center hidden">
