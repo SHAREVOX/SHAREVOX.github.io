@@ -147,6 +147,7 @@ const Home: NextPage = () => {
           className="text-center"
           style={{
             paddingTop: featurePaddingSize,
+            paddingBottom: 30,
           }}
         >
           <p className="text-3xl md:text-4xl 2xl:text-5xl font-semibold">
