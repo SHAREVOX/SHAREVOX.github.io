@@ -14,14 +14,14 @@ const Footer: React.FC = () => {
           <p className="opacity-40 mb-4">Menu</p>
           <div className="flex flex-col">
             <Link href="/terms" className="">
-              利用規約
+              <a>利用規約</a>
             </Link>
-            <a href="#" className="">
-              キャラクター一覧
-            </a>
-            <a href="#" className="">
-              更新履歴
-            </a>
+            <Link href="#" className="">
+              <a>キャラクター一覧</a>
+            </Link>
+            <Link href="#" className="">
+              <a>更新履歴</a>
+            </Link>
           </div>
         </div>
         <div className="ml-10 my-2 text-left">

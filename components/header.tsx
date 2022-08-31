@@ -87,7 +87,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <div className="px-4 flex justify-between items-center">
           <h1 className="text-xl 2xl:text-3xl font-semibold py-2">
             <Link href="/" className="decoration-0">
-              SHAREVOX
+              <a>SHAREVOX</a>
             </Link>
           </h1>
           <div className="md:hidden">
@@ -108,19 +108,19 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <div className={menuClass}>
           <ul className="md:flex md:py-2 w-full md:items-center">
             <li className="border-b md:border-none">
-              <Link href="/terms" className={headerButtonClass}>
-                利用規約
+              <Link href="/terms">
+                <a className={headerButtonClass}>利用規約</a>
               </Link>
             </li>
             <li className="border-b md:border-none">
-              <a href="#" className={headerButtonClass}>
-                キャラクター一覧
-              </a>
+              <Link href="#">
+                <a className={headerButtonClass}>キャラクター一覧</a>
+              </Link>
             </li>
             <li className="border-b md:border-none">
-              <a href="#" className={headerButtonClass}>
-                更新履歴
-              </a>
+              <Link href="#">
+                <a className={headerButtonClass}>更新履歴</a>
+              </Link>
             </li>
             <li>
               <div className="my-2 gmd:my-4 text-center hidden">
