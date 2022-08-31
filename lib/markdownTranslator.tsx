@@ -1,3 +1,4 @@
+// @ts-ignore
 import addClasses from 'rehype-add-classes'
 import rehypeStringify from 'rehype-stringify'
 import remarkParse from 'remark-parse'
