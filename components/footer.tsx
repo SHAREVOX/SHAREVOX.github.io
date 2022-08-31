@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
             <a href="#" className="">
               キャラクター一覧
             </a>
-            <a href="#" className="">
+            <a href="/release-notes" className="">
               更新履歴
             </a>
           </div>

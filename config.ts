@@ -3,6 +3,10 @@ const config = {
   GITHUB_EDITOR_URL: 'https://github.com/SHAREVOX/sharevox',
   GITHUB_ENGINE_URL: 'https://github.com/SHAREVOX/sharevox_engine',
   GITHUB_CORE_URL: 'https://github.com/SHAREVOX/sharevox_core',
+  RELEASE_NOTE_URL:
+    'https://raw.githubusercontent.com/VOICEVOX/voicevox/main/public/updateInfos.json',
+  // TODO: privateで利用できなかったので、publicになったら後で差し替える
+  // 'https://raw.githubusercontent.com/SHAREVOX/sharevox/main/public/updateInfos.json',
   RELEASED_VERSION: '0.1.0',
   WINDOWS_CPU_DOWNLOAD_URL: '#',
   WINDOWS_CUDA_DOWNLOAD_URL: '#',
