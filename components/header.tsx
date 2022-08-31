@@ -80,7 +80,11 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={firstViewImage.src} />
-        <meta property="twitter:image" content={firstViewImage.src} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content={firstViewImage.src} />
+        <meta name="twitter:title" content="SHAREVOX" />
+        <meta name="twitter:description" content={description} />
+        <meta name="twitter:domain" content="www.sharevox.app" />
       </Head>
 
       <header className={headerClass}>
