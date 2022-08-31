@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 import config from '@/config'
@@ -12,9 +13,9 @@ const Footer: React.FC = () => {
         <div className="mr-10 my-2 text-left">
           <p className="opacity-40 mb-4">Menu</p>
           <div className="flex flex-col">
-            <a href="/terms" className="">
+            <Link href="/terms" className="">
               利用規約
-            </a>
+            </Link>
             <a href="#" className="">
               キャラクター一覧
             </a>
