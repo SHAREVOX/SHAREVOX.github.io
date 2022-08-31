@@ -152,7 +152,7 @@ const Home: NextPage = () => {
           <p className="text-3xl md:text-4xl 2xl:text-5xl font-semibold">
             特徴
           </p>
-          <p className="text-xl 2xl:text-2xl font-semibold">feature</p>
+          <p className="text-xl 2xl:text-2xl font-semibold">FEATURE</p>
         </div>
         <div>
           <div
