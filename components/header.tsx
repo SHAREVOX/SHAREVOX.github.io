@@ -110,7 +110,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
               </Link>
             </li>
             <li className="border-b md:border-none">
-              <Link href="#">
+              <Link href="/characters">
                 <a className={headerButtonClass}>キャラクター一覧</a>
               </Link>
             </li>
