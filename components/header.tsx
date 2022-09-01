@@ -35,6 +35,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
   const embeddedTitle = title
     ? `${title.length > 0 && title} | SHAREVOX`
     : `SHAREVOX`
+  const url = 'https://www.sharevox.app'
   const description =
     '無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX'
 
@@ -67,14 +68,14 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <meta name="description" content={description} />
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <meta property="og:url" content="https://sharevox.app" />
+        <meta property="og:url" content={url} />
         <meta property="og:title" content={embeddedTitle} />
         <meta property="og:site_name" content="SHAREVOX" />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={firstViewImage.src} />
+        <meta property="og:image" content={url + firstViewImage.src} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:image" content={firstViewImage.src} />
+        <meta name="twitter:image" content={url + firstViewImage.src} />
         <meta name="twitter:title" content="SHAREVOX" />
         <meta name="twitter:description" content={description} />
         <meta name="twitter:domain" content="www.sharevox.app" />
