@@ -115,7 +115,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
               </Link>
             </li>
             <li className="border-b md:border-none">
-              <Link href="#">
+              <Link href="/release-notes">
                 <a className={headerButtonClass}>更新履歴</a>
               </Link>
             </li>
