@@ -1,4 +1,9 @@
-import { ReleaseData } from '@/components/types'
+// よほど重要でない限り、型だけのファイルはない方が良いのでここに書く
+export type ReleaseData = {
+  version: string
+  descriptions: string[]
+  contributors: string[]
+}
 
 type Props = {
   data: ReleaseData
@@ -22,11 +27,7 @@ const ReleaseCard: React.FC<Props> = ({ data }) => {
       {data.contributors && data.contributors.length > 0 && (
         <>
           <h3>コントリビューター</h3>
-          <ul>
-            {data.contributors.map((v, idx) => (
-              <li key={idx}>{v}</li>
-            ))}
-          </ul>
+          <p>{data.contributors.join(' / ')}</p>
         </>
       )}
     </div>
