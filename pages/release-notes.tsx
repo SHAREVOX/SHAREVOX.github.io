@@ -1,4 +1,4 @@
-import { NextPage } from 'next/types'
+import { NextPageWithLayout } from 'next'
 
 import Layout from '@/components/layout'
 import ReleaseCard, { ReleaseData } from '@/components/releaseCard'
@@ -27,31 +27,31 @@ type Props = {
   data: ReleaseData[]
 }
 
-const ReleaseNotes: NextPage<Props> = ({ data }) => {
+const ReleaseNotes: NextPageWithLayout<Props> = ({ data }) => {
   return (
-    <Layout title="リリースノート">
-      <div className="mx-10">
-        <h1>更新履歴</h1>
-        {data && data.length > 0 ? (
-          data.map((d, idx) => <ReleaseCard key={idx} data={d} />)
-        ) : (
-          <>
-            <p>更新履歴の取得に失敗しました。</p>
-            <p>
-              更新履歴の元データは
-              <a
-                className="text-primary"
-                href="https://github.com/SHAREVOX/sharevox/tags"
-              >
-                SHAREVOXのリポジトリ
-              </a>
-              をご参照ください。
-            </p>
-          </>
-        )}
-      </div>
-    </Layout>
+    <div className="mx-10">
+      <h1>更新履歴</h1>
+      {data && data.length > 0 ? (
+        data.map((d, idx) => <ReleaseCard key={idx} data={d} />)
+      ) : (
+        <>
+          <p>更新履歴の取得に失敗しました。</p>
+          <p>
+            更新履歴の元データは
+            <a
+              className="text-primary"
+              href="https://github.com/SHAREVOX/sharevox/tags"
+            >
+              SHAREVOXのリポジトリ
+            </a>
+            をご参照ください。
+          </p>
+        </>
+      )}
+    </div>
   )
 }
+
+ReleaseNotes.getLayout = (page) => <Layout title="更新履歴">{page}</Layout>
 
 export default ReleaseNotes
