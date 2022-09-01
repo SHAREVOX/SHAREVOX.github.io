@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
             <Link href="/terms" className="">
               <a>利用規約</a>
             </Link>
-            <Link href="#" className="">
+            <Link href="/characters" className="">
               <a>キャラクター一覧</a>
             </Link>
             <Link href="/release-notes" className="">
