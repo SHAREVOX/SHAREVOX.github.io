@@ -18,7 +18,8 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
     openMenu || 'gmd:hidden'
   }`
 
-  const headerBaseClass = 'z-10 mx-auto md:flex md:justify-around w-full'
+  // ほかの要素が上に来ないように、z-indexを1000にしておく
+  const headerBaseClass = 'z-[1000] mx-auto md:flex md:justify-around w-full'
   const headerButtonBaseClass =
     'block gmd:p-2 md:m-2 2xl:m-4 rounded font-semibold'
   const headerClass = mainPageHeader
