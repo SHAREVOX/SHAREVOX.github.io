@@ -108,7 +108,7 @@ const Home: NextPage = () => {
           </p>
           <div className="flex flex-col md:flex-row m-8 2xl:text-2xl">
             <a className="md:ml-auto md:mr-2 2xl:mr-4 gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary">
-              Coming Soon...
+              9/10 Coming Soon...
             </a>
             <Scroll
               className="md:ml-2 2xl:ml-4 md:mr-auto gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-primary bg-white cursor-pointer"
@@ -233,7 +233,7 @@ const Home: NextPage = () => {
             </p>
             <div className="flex flex-col mt-8 mb-4 2xl:text-2xl">
               <a className="mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary">
-                Coming Soon...
+                9/10 Coming Soon...
               </a>
             </div>
           </div>
