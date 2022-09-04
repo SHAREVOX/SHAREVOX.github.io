@@ -15,6 +15,7 @@ const config = {
   OFFICIAL_TWITTER_URL: 'https://twitter.com/sharevox_pj',
   DEVELOPER_TWITTER_URL: 'https://twitter.com/y_chan_dev',
   FANBOX_URL: 'https://y-chan.fanbox.cc',
+  GOOGLEANALYTICS_ID: '',
 }
 
 export default config
