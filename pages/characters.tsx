@@ -2,6 +2,7 @@ import fs from 'fs'
 import { NextPage } from 'next'
 import React, { useState } from 'react'
 import { useModal } from 'react-hooks-use-modal'
+import { MdClose } from 'react-icons/md'
 
 import CharacterCard, {
   AudioSampleArray,
@@ -244,10 +245,17 @@ const Characters: NextPage<Props> = ({
           openModal={openModal}
         />
         <Modal>
-          <div
-            className="justify-center bg-white px-10 py-6 rounded-2xl w-3/4 m-auto"
-            dangerouslySetInnerHTML={{ __html: showingPolicy }}
-          />
+          <div className="flex flex-col justify-center bg-white px-6 py-4 rounded-2xl max-h-[90vh] w-[90vw] lg:w-3/4 m-auto">
+            <div className="text-right">
+              <button onClick={close}>
+                <MdClose />
+              </button>
+            </div>
+            <div
+              className="overflow-y-auto mb-2"
+              dangerouslySetInnerHTML={{ __html: showingPolicy }}
+            />
+          </div>
         </Modal>
       </main>
       <Footer />
