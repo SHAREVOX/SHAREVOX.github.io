@@ -194,9 +194,7 @@ const Characters: NextPage<Props> = ({
     },
   ]
 
-  const [Modal, open, close, isOpen] = useModal('root', {
-    preventScroll: true,
-  })
+  const [Modal, open, close, isOpen] = useModal('root')
   const [showingPolicy, setShowingPolicy] = useState<string>('')
   const openModal = (policy: string) => {
     setShowingPolicy(policy)
