@@ -60,6 +60,7 @@ export const GoogleAnalytics = () => (
           strategy="afterInteractive"
         />
         <Script
+          id="ga"
           defer
           dangerouslySetInnerHTML={{
             __html: `
