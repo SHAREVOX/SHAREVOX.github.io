@@ -60,6 +60,10 @@ main ul li .flex {
   display: flex;
 }
 
+main p {
+  margin-bottom: 1em;
+}
+
 * {
   box-sizing: border-box;
 }
