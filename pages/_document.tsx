@@ -14,7 +14,7 @@ const Document: NextPage = () => {
           rel="stylesheet"
         />
       </Head>
-      <body>
+      <body id="root">
         <Main />
         <NextScript />
       </body>

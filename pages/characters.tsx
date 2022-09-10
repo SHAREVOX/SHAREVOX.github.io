@@ -208,10 +208,7 @@ const Characters: NextPage<Props> = ({
       <Header mainPageHeader={false} title="キャラクター一覧" />
 
       {/* ref: https://tailwindcss.com/docs/installation */}
-      <main
-        className="pt-20 pb-10 2xl:py-24 flex flex-wrap justify-center"
-        id="root"
-      >
+      <main className="pt-20 pb-10 2xl:py-24 flex flex-wrap justify-center">
         <CharacterCard
           name="小春音アミ"
           image={KoharuneAmiImage}

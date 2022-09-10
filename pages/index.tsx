@@ -15,6 +15,7 @@ import deepLearningImage from '@/public/deep-learning.png'
 import developerFriendlyImage from '@/public/developer-friendly.png'
 import freedomSpeechImage from '@/public/freedom-speech.png'
 import mainImage from '@/public/sharevox-first-view.png'
+import DownloadModal from '@/components/downloadModal'
 
 const Home: NextPage = () => {
   const [absoluteHeader, setAbsoluteHeader] = useState(true)
@@ -79,6 +80,8 @@ const Home: NextPage = () => {
     return () => window.removeEventListener('resize', onResize)
   }, [])
 
+  const [DownloadModalComponent, open, close, isOpen] = DownloadModal()
+
   return (
     <>
       {/* トップページはヘッダの扱いが特殊なので、Layoutを利用しない */}
@@ -120,6 +123,7 @@ const Home: NextPage = () => {
               詳しくみる
             </Scroll>
           </div>
+          <DownloadModalComponent />
           <div className="flex mt-20 mx-12 sm:mx-20 md:mx-36 xl:mx-60">
             {/* FIXME: Next/Image ではセンタリングに失敗する */}
             <img

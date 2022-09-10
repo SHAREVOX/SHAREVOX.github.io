@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
+import DownloadModal from '@/components/downloadModal'
 import { GoogleAnalytics } from '@/lib/gtag'
 import firstViewImage from '@/public/sharevox-first-view.png'
 
@@ -31,7 +32,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
   const headerButtonClass = mainPageHeader
     ? `${headerButtonBaseClass} gmd:hover:text-white gmd:hover:bg-primary`
     : `${headerButtonBaseClass} gmd:hover:text-primary gmd:hover:bg-white`
-  const downloadButtonClass = `md:mx-2 my-4 gmd:text-center rounded font-semibold py-2 px-4 2xl:px-6 2xl:py-3 ${
+  const downloadButtonClass = `md:mx-2 gmd:text-center rounded font-semibold py-2 px-4 2xl:px-6 2xl:py-3 ${
     mainPageHeader ? 'text-white bg-primary' : 'text-primary bg-white'
   }`
   const embeddedTitle = title
@@ -40,6 +41,7 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
   const url = 'https://www.sharevox.app'
   const description =
     '無料で使える、声を作れるテキスト読み上げソフトウェア、SHAREVOX'
+  const [DownloadModalComponent, open, close, isOpen] = DownloadModal()
 
   return (
     <>
@@ -125,14 +127,15 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
               </Link>
             </li>
             <li>
-              <div className="my-2 gmd:my-4 text-center hidden">
-                <a href="#" className={downloadButtonClass}>
-                  無料ダウンロード
-                </a>
+              <div className="gmd:my-4 text-center">
+                <button onClick={open} className={downloadButtonClass}>
+                  ダウンロード
+                </button>
               </div>
             </li>
           </ul>
         </div>
+        <DownloadModalComponent />
       </header>
     </>
   )
