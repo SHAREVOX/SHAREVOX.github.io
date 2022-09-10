@@ -16,6 +16,7 @@ import developerFriendlyImage from '@/public/developer-friendly.png'
 import freedomSpeechImage from '@/public/freedom-speech.png'
 import mainImage from '@/public/sharevox-first-view.png'
 import DownloadModal from '@/components/downloadModal'
+import config from '@/config'
 
 const Home: NextPage = () => {
   const [absoluteHeader, setAbsoluteHeader] = useState(true)
@@ -109,12 +110,15 @@ const Home: NextPage = () => {
             <br />
             自分の好きな声で創造しよう
           </p>
-          <div className="flex flex-col md:flex-row m-8 2xl:text-2xl">
-            <a className="md:ml-auto md:mr-2 2xl:mr-4 gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary">
-              9/10 Coming Soon...
-            </a>
+          <div className="flex flex-col md:flex-row mx-8 mt-8 2xl:text-2xl">
+            <button
+              className="md:ml-auto md:mr-2 2xl:mr-4 gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary"
+              onClick={open}
+            >
+              ダウンロード
+            </button>
             <Scroll
-              className="md:ml-2 2xl:ml-4 md:mr-auto gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-primary bg-white cursor-pointer"
+              className="md:ml-2 2xl:ml-4 md:mr-auto gmd:mt-1 2xl:mt-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-primary bg-white cursor-pointer"
               to="feature"
               smooth={true}
               duration={1000}
@@ -122,6 +126,9 @@ const Home: NextPage = () => {
             >
               詳しくみる
             </Scroll>
+          </div>
+          <div className="text-center mb-8">
+            Version {config.RELEASED_VERSION}
           </div>
           <DownloadModalComponent />
           <div className="flex mt-20 mx-12 sm:mx-20 md:mx-36 xl:mx-60">
