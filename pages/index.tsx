@@ -4,9 +4,11 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Link as Scroll } from 'react-scroll'
 
 import DescCard from '@/components/descCard'
+import DownloadModal from '@/components/downloadModal'
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import SpBreak from '@/components/spBreak'
+import config from '@/config'
 import backImage from '@/public/backimage.png'
 import createModelImage from '@/public/create-model.png'
 import decoration0Image from '@/public/decoration-0.svg'
@@ -15,8 +17,6 @@ import deepLearningImage from '@/public/deep-learning.png'
 import developerFriendlyImage from '@/public/developer-friendly.png'
 import freedomSpeechImage from '@/public/freedom-speech.png'
 import mainImage from '@/public/sharevox-first-view.png'
-import DownloadModal from '@/components/downloadModal'
-import config from '@/config'
 
 const Home: NextPage = () => {
   const [absoluteHeader, setAbsoluteHeader] = useState(true)
