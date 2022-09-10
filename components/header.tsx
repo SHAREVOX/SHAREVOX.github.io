@@ -3,7 +3,7 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 import DownloadModal from '@/components/downloadModal'
-import { GoogleAnalytics } from '@/lib/gtag'
+import { GA_ID } from '@/lib/gtag'
 import firstViewImage from '@/public/sharevox-first-view.png'
 
 type Props = {
@@ -84,7 +84,26 @@ const Header: React.FC<Props> = ({ mainPageHeader, title }) => {
         <meta name="twitter:description" content={description} />
         <meta name="twitter:domain" content="www.sharevox.app" />
 
-        {GoogleAnalytics()}
+        {/* Google Analytics */}
+        {GA_ID && (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                   window.dataLayer = window.dataLayer || [];
+                   function gtag(){dataLayer.push(arguments);}
+                   gtag('js', new Date());
+                   gtag('config', '${GA_ID}', {
+                     page_path: window.location.pathname,
+                   });`,
+              }}
+            />
+          </>
+        )}
       </Head>
 
       <header className={headerClass}>
