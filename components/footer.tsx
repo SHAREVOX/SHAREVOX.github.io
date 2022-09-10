@@ -22,6 +22,9 @@ const Footer: React.FC = () => {
             <Link href="/release-notes" className="">
               <a>更新履歴</a>
             </Link>
+            <Link href="/privacy-policy" className="">
+              <a>プライバシーポリシー</a>
+            </Link>
           </div>
         </div>
         <div className="ml-10 my-2 text-left">
