@@ -1,5 +1,4 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import React, { useEffect, useRef, useState } from 'react'
 import { Link as Scroll } from 'react-scroll'
 
@@ -242,10 +241,13 @@ const Home: NextPage = () => {
               <br />
               あなたの創作活動にSHAREVOXを使ってみませんか？
             </p>
-            <div className="flex flex-col mt-8 mb-4 2xl:text-2xl">
-              <a className="mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary">
-                9/10 Coming Soon...
-              </a>
+            <div className="flex flex-col md:flex-row mx-8 mt-8 2xl:text-2xl">
+              <button
+                className="mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary"
+                onClick={open}
+              >
+                ダウンロード
+              </button>
             </div>
           </div>
           <div className="h-0">
