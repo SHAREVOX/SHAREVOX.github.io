@@ -54,71 +54,79 @@ const DownloadModal = () => {
                 </button>
               </div>
             </div>
-            <div className="flex flex-row m-4">
-              <div className="flex flex-col text-center text-xl w-1/4 ">
-                <div className="my-3">OS</div>
-                <div className="my-3">対応モード</div>
-              </div>
-              <div className="flex flex-col text-center text-xl w-3/4">
-                <div className="flex flex-row my-1.5 mx-auto">
-                  <button
-                    className={
-                      osType === 'win'
-                        ? selectedButtonClass
-                        : unselectedButtonClass
-                    }
-                    onClick={() => setOsType('win')}
-                  >
-                    Windows
-                  </button>
-                  <button
-                    className={
-                      osType === 'mac'
-                        ? selectedButtonClass
-                        : unselectedButtonClass
-                    }
-                    onClick={() => {
-                      setOsType('mac')
-                      setSupportMode('cpu')
-                    }}
-                  >
-                    Mac
-                  </button>
-                  <button
-                    className={
-                      osType === 'linux'
-                        ? selectedButtonClass
-                        : unselectedButtonClass
-                    }
-                    onClick={() => setOsType('linux')}
-                  >
-                    Linux
-                  </button>
+            <div className="m-4">
+              <div className="flex flex-row my-1.5">
+                <div className="flex text-xl w-full">
+                  <div className="my-3 w-1/4 text-center">OS</div>
+                  <div className="flex flex-col text-center text-xl w-3/4">
+                    <div className="flex flex-row flex-wrap mx-auto">
+                      <button
+                        className={
+                          osType === 'win'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => setOsType('win')}
+                      >
+                        Windows
+                      </button>
+                      <button
+                        className={
+                          osType === 'mac'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => {
+                          setOsType('mac')
+                          setSupportMode('cpu')
+                        }}
+                      >
+                        Mac
+                      </button>
+                      <button
+                        className={
+                          osType === 'linux'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => setOsType('linux')}
+                      >
+                        Linux
+                      </button>
+                    </div>
+                  </div>
                 </div>
-                <div className="flex flex-row my-1.5 mx-auto">
-                  <button
-                    className={
-                      osType === 'mac'
-                        ? disabledButtonClass
-                        : supportMode === 'both'
-                        ? selectedButtonClass
-                        : unselectedButtonClass
-                    }
-                    disabled={osType === 'mac'}
-                    onClick={() => setSupportMode('both')}
-                  >
-                    GPU / CPU
-                  </button>
-                  <button
-                    className={
-                      supportMode === 'cpu'
-                        ? selectedButtonClass
-                        : unselectedButtonClass
-                    }
-                    onClick={() => setSupportMode('cpu')}
-                  >
-                    CPU
-                  </button>
+              </div>
+              <div className="flex flex-row my-1.5">
+                <div className="flex text-xl w-full">
+                  <div className="my-3 w-1/4 text-center">対応モード</div>
+                  <div className="flex flex-col text-center text-xl w-3/4">
+                    <div className="flex flex-auto flex-wrap mx-auto">
+                      <button
+                        className={
+                          osType === 'mac'
+                            ? disabledButtonClass
+                            : supportMode === 'both'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        disabled={osType === 'mac'}
+                        onClick={() => setSupportMode('both')}
+                      >
+                        GPU / CPU
+                      </button>
+                      <button
+                        className={
+                          supportMode === 'cpu'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => setSupportMode('cpu')}
+                      >
+                        CPU
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
