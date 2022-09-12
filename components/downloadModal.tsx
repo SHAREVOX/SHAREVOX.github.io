@@ -57,7 +57,9 @@ const DownloadModal = () => {
             <div className="items-center justify-center m-4">
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
-                  <div className="text-center my-3 w-1/4">OS</div>
+                  <div className="flex items-center justify-center my-3 w-1/4">
+                    OS
+                  </div>
                   <div className="flex flex-col text-xl w-3/4">
                     <div className="flex flex-row flex-wrap mx-auto">
                       <button
@@ -99,7 +101,9 @@ const DownloadModal = () => {
               </div>
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
-                  <div className="text-center my-3 w-1/4">対応モード</div>
+                  <div className="flex items-center justify-center my-3 w-1/4">
+                    対応モード
+                  </div>
                   <div className="flex flex-col text-xl w-3/4">
                     <div className="flex flex-row flex-wrap mx-auto">
                       <button
