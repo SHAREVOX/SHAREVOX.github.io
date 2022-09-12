@@ -54,7 +54,7 @@ const DownloadModal = () => {
                 </button>
               </div>
             </div>
-            <div className="justify-center m-4">
+            <div className="text-center justify-center m-4">
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
                   <div className="flex items-center justify-center my-3 w-1/4">
