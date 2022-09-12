@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useModal } from 'react-hooks-use-modal'
 import { MdClose } from 'react-icons/md'
 
+import SpBreak from '@/components/spBreak'
 import config from '@/config'
 
 type ModelResult = [
@@ -102,7 +103,9 @@ const DownloadModal = () => {
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
                   <div className="flex items-center justify-center my-3 w-1/4">
-                    対応モード
+                    対応
+                    <SpBreak />
+                    モード
                   </div>
                   <div className="flex flex-col text-xl w-3/4">
                     <div className="flex h-full items-center flex-row flex-wrap mx-auto">
