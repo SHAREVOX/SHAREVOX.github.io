@@ -54,7 +54,7 @@ const DownloadModal = () => {
                 </button>
               </div>
             </div>
-            <div className="items-center justify-center m-4">
+            <div className="justify-center m-4">
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
                   <div className="flex items-center justify-center my-3 w-1/4">
@@ -105,7 +105,7 @@ const DownloadModal = () => {
                     対応モード
                   </div>
                   <div className="flex flex-col text-xl w-3/4">
-                    <div className="flex flex-row flex-wrap mx-auto">
+                    <div className="flex h-full items-center flex-row flex-wrap mx-auto">
                       <button
                         className={
                           osType === 'mac'
