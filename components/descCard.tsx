@@ -1,4 +1,4 @@
-import { StaticImageData } from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import React from 'react'
 
 type Props = {
@@ -24,7 +24,13 @@ const descCard = React.forwardRef<HTMLDivElement, Props>(
           <p className="text-left 2xl:text-xl md:h-20 2xl:h-16">{children}</p>
         )}
         <div>
-          <img className="rounded-xl" src={image.src} alt={imageAlt} />
+          <Image
+            className="rounded-xl"
+            src={image.src}
+            alt={imageAlt}
+            width={image.width}
+            height={image.height}
+          />
         </div>
       </div>
     )

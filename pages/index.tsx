@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
 import React, { useEffect, useRef, useState } from 'react'
 import { Link as Scroll } from 'react-scroll'
 
@@ -30,9 +31,9 @@ const Home: NextPage = () => {
     })
     observer.observe(firstViewRef.current)
   }, [firstViewRef])
-  const imageRef = useRef<HTMLImageElement>(null)
-  const decoration0Ref = useRef<HTMLImageElement>(null)
-  const decoration1Ref = useRef<HTMLImageElement>(null)
+  const imageDivRef = useRef<HTMLDivElement>(null)
+  const decoration0DivRef = useRef<HTMLDivElement>(null)
+  const decoration1DivRef = useRef<HTMLDivElement>(null)
   const finalFeatureCardRef = useRef<HTMLDivElement>(null)
   const [featurePaddingSize, setFeaturePaddingSize] = useState(50)
   const [decoration0Top, setDecoration0Top] = useState(0)
@@ -40,12 +41,17 @@ const Home: NextPage = () => {
   const [decoration1Left, setDecoration1Left] = useState(50)
   const [decoration3Left, setDecoration3Left] = useState(0)
 
+  const [mainImageWidth, setMainImageWidth] = useState(500)
+  const [mainImageHeight, setMainImageHeight] = useState(
+    mainImage.height / (mainImage.width / mainImageWidth)
+  )
+
   useEffect(() => {
     const onResize = () => {
-      const image = imageRef.current
+      const image = imageDivRef.current
       const firstView = firstViewRef.current
-      const decoration0 = decoration0Ref.current
-      const decoration1 = decoration1Ref.current
+      const decoration0 = decoration0DivRef.current
+      const decoration1 = decoration1DivRef.current
       const finalFeatureCard = finalFeatureCardRef.current
       if (
         !image ||
@@ -55,8 +61,17 @@ const Home: NextPage = () => {
         !finalFeatureCard
       )
         return
+
       const { bottom: firstViewBottom, width: displayWidth } =
         firstView.getBoundingClientRect()
+
+      const newMainImageWidth =
+        window.innerWidth * (displayWidth > 1980 ? 0.5 : 0.7)
+      setMainImageWidth(newMainImageWidth)
+      setMainImageHeight(
+        mainImage.height * (newMainImageWidth / mainImage.width)
+      )
+
       const { bottom: imageBottom, left: imageLeft } =
         image.getBoundingClientRect()
       setDecoration0Left(imageLeft)
@@ -131,26 +146,37 @@ const Home: NextPage = () => {
           </div>
           <DownloadModalComponent />
           <div className="flex mt-20 mx-12 sm:mx-20 md:mx-36 xl:mx-60">
-            {/* FIXME: Next/Image ではセンタリングに失敗する */}
-            <img
-              ref={imageRef}
-              src={mainImage.src}
-              alt="first view"
-              className="rounded-xl mx-auto"
-            />
+            <div
+              ref={imageDivRef}
+              className={`flex justify-center mx-auto h-[${mainImageHeight}px]`}
+            >
+              <Image
+                src={mainImage.src}
+                width={mainImageWidth}
+                height={mainImageHeight}
+                alt="first view"
+                objectFit="contain"
+                className="rounded-xl"
+              />
+            </div>
           </div>
-          <img
-            src={decoration0Image.src}
-            alt="decoration0"
-            ref={decoration0Ref}
-            className={
-              (decoration0Top === 0 ? 'hidden' : 'relative') + ' w-1/6'
-            }
+          <div
+            ref={decoration0DivRef}
             style={{
               top: `${decoration0Top}%`,
               left: `calc(${decoration0Left}px - 10%)`,
             }}
-          />
+            className={
+              (decoration0Top === 0 ? 'hidden' : 'relative') + ' w-1/6'
+            }
+          >
+            <Image
+              src={decoration0Image.src}
+              alt="decoration0"
+              width={decoration0Image.width}
+              height={decoration0Image.height}
+            />
+          </div>
         </div>
         <div
           id="feature"
@@ -211,16 +237,21 @@ const Home: NextPage = () => {
             </DescCard>
           </div>
           <div className="h-0">
-            <img
-              src={decoration0Image.src}
-              alt="decoration1"
-              ref={decoration1Ref}
+            <div
+              ref={decoration1DivRef}
               className="relative w-1/4 lg:w-1/6"
               style={{
                 top: `-200px`,
                 left: decoration1Left,
               }}
-            />
+            >
+              <Image
+                src={decoration0Image.src}
+                alt="decoration1"
+                width={decoration0Image.width}
+                height={decoration0Image.height}
+              />
+            </div>
           </div>
         </div>
         <div className="py-20">
@@ -251,26 +282,36 @@ const Home: NextPage = () => {
             </div>
           </div>
           <div className="h-0">
-            <img
-              src={decoration1Image.src}
-              alt="decoration2"
+            <div
               className="relative z-0 w-[100%] sm:w-[75%] md:w-1/2 lg:w-1/3 overflow-x-hidden"
               style={{
                 top: -380,
                 left: 0,
               }}
-            />
+            >
+              <Image
+                src={decoration1Image.src}
+                alt="decoration2"
+                width={decoration1Image.width}
+                height={decoration1Image.height}
+              />
+            </div>
           </div>
           <div className="h-0">
-            <img
-              src={decoration1Image.src}
-              alt="decoration3"
+            <div
               className="relative z-0 gmd:hidden md:w-1/3 lg:w-1/4 overflow-x-hidden"
               style={{
                 top: -200,
                 left: decoration3Left,
               }}
-            />
+            >
+              <Image
+                src={decoration1Image.src}
+                alt="decoration3"
+                width={decoration1Image.width}
+                height={decoration1Image.height}
+              />
+            </div>
           </div>
         </div>
       </main>
