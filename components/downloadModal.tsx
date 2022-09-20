@@ -69,7 +69,10 @@ const DownloadModal = () => {
                             ? selectedButtonClass
                             : unselectedButtonClass
                         }
-                        onClick={() => setOsType('win')}
+                        onClick={() => {
+                          setOsType('win')
+                          setSupportMode('both')
+                        }}
                       >
                         Windows
                       </button>
@@ -92,7 +95,10 @@ const DownloadModal = () => {
                             ? selectedButtonClass
                             : unselectedButtonClass
                         }
-                        onClick={() => setOsType('linux')}
+                        onClick={() => {
+                          setOsType('linux')
+                          setSupportMode('both')
+                        }}
                       >
                         Linux
                       </button>
