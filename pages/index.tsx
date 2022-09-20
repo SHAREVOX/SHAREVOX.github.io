@@ -67,13 +67,14 @@ const Home: NextPage = () => {
 
       const newMainImageWidth =
         window.innerWidth * (displayWidth > 1980 ? 0.5 : 0.7)
-      setMainImageWidth(newMainImageWidth)
-      setMainImageHeight(
+      const newMainImageHeight =
         mainImage.height * (newMainImageWidth / mainImage.width)
-      )
+      setMainImageWidth(newMainImageWidth)
+      setMainImageHeight(newMainImageHeight)
 
-      const { bottom: imageBottom, left: imageLeft } =
-        image.getBoundingClientRect()
+      const { top: imageTop } = image.getBoundingClientRect()
+      const imageBottom = imageTop + newMainImageHeight
+      const imageLeft = (window.innerWidth - newMainImageWidth) / 2
       setDecoration0Left(imageLeft)
       if (firstViewBottom < imageBottom) {
         setFeaturePaddingSize(imageBottom - firstViewBottom + 50)
