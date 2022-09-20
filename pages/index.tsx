@@ -106,16 +106,15 @@ const Home: NextPage = () => {
         <div
           ref={firstViewRef}
           style={{
-            backgroundImage: `url(${backImage.src})`,
             height: '100vh',
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            width: '100%',
           }}
+          className="relative"
         >
+          <div className="w-full">
+            <Image src={backImage.src} alt="back image" layout="fill" />
+          </div>
           <p
-            className="text-center text-2xl md:text-3xl 2xl:text-5xl font-bold"
+            className="relative text-center text-2xl md:text-3xl 2xl:text-5xl font-bold"
             style={{
               paddingTop: '20vh',
             }}
@@ -124,7 +123,7 @@ const Home: NextPage = () => {
             <br />
             自分の好きな声で創造しよう
           </p>
-          <div className="flex flex-col md:flex-row mx-8 mt-8 2xl:text-2xl">
+          <div className="relative flex flex-col md:flex-row mx-8 mt-8 2xl:text-2xl">
             <button
               className="md:ml-auto md:mr-2 2xl:mr-4 gmd:my-1 2xl:my-2 mx-auto rounded font-semibold px-4 py-2 2xl:px-6 2xl:py-3 text-white bg-primary"
               onClick={open}
