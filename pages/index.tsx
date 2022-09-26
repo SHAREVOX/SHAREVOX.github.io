@@ -141,7 +141,7 @@ const Home: NextPage = () => {
               詳しくみる
             </Scroll>
           </div>
-          <div className="text-center mb-8">
+          <div className="relative text-center mb-8">
             Version {config.RELEASED_VERSION}
           </div>
           <DownloadModalComponent />
