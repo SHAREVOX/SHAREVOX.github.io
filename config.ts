@@ -5,19 +5,19 @@ const config = {
   GITHUB_CORE_URL: 'https://github.com/SHAREVOX/sharevox_core',
   RELEASE_NOTE_URL:
     'https://raw.githubusercontent.com/SHAREVOX/sharevox/sv-release-0.1/public/updateInfos.json',
-  RELEASED_VERSION: '0.1.3',
+  RELEASED_VERSION: '0.1.5',
   WINDOWS_CPU_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/SHAREVOX-CPU.Web.Setup.0.1.3.exe',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/SHAREVOX-CPU.Web.Setup.0.1.5.exe',
   WINDOWS_CUDA_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/SHAREVOX-CUDA.Web.Setup.0.1.3.exe',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/SHAREVOX-CUDA.Web.Setup.0.1.5.exe',
   WINDOWS_DIRECTML_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/SHAREVOX.Web.Setup.0.1.3.exe',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/SHAREVOX.Web.Setup.0.1.5.exe',
   MAC_CPU_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/SHAREVOX.0.1.3.dmg',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/SHAREVOX.0.1.5.dmg',
   LINUX_CPU_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/sharevox-linux-cpu-0.1.3.tar.gz',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/sharevox-linux-cpu-0.1.5.tar.gz',
   LINUX_CUDA_DOWNLOAD_URL:
-    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.3/sharevox-linux-nvidia-0.1.3.tar.gz',
+    'https://github.com/SHAREVOX/sharevox/releases/download/0.1.5/sharevox-linux-nvidia-0.1.5.tar.gz',
   OFFICIAL_TWITTER_URL: 'https://twitter.com/sharevox_pj',
   DEVELOPER_TWITTER_URL: 'https://twitter.com/y_chan_dev',
   FANBOX_URL: 'https://y-chan.fanbox.cc',
