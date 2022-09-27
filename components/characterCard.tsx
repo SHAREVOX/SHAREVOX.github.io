@@ -48,7 +48,7 @@ const characterCard = React.forwardRef<HTMLDivElement, Props>(
         </div>
         <p className="font-semibold text-2xl 2xl:text-3xl my-2">{name}</p>
         <div className="flex flex-row justify-center items-center">
-          <p className="text-lg 2xl:text-xl mr-2">サンプル音声</p>
+          <p className="text-lg 2xl:text-xl mr-2 my-0">サンプル音声</p>
           {audioSamples[selectedStyleIndex].samples.map((value) => {
             return <AudioPlayer audioSrc={value} key={value} />
           })}
@@ -58,7 +58,7 @@ const characterCard = React.forwardRef<HTMLDivElement, Props>(
             styleOptions.length === 1 && 'hidden'
           }`}
         >
-          <p className="text-lg 2xl:text-xl mr-2">スタイル</p>
+          <p className="text-lg 2xl:text-xl mr-2 my-0">スタイル</p>
           <Select
             value={styleOptions[selectedStyleIndex]}
             options={styleOptions}

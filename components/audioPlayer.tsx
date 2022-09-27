@@ -59,7 +59,7 @@ const AudioPlayer: React.FC<Props> = ({ audioSrc }) => {
   return (
     <>
       <button onClick={isPlaying ? stop : play} disabled={!isReady}>
-        <p className="text-5xl text-primary">
+        <p className="text-5xl text-primary m-0">
           {!isPlaying ? <HiPlay /> : <HiStop />}
         </p>
       </button>
