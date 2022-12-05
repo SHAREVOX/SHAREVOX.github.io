@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useModal } from 'react-hooks-use-modal'
 import { MdClose } from 'react-icons/md'
 
@@ -12,6 +12,59 @@ type ModelResult = [
   isOpen: boolean
 ]
 
+const linuxInstallScript = (both: boolean) => {
+  return URL.createObjectURL(
+    new Blob(
+      [
+        `#!/usr/bin/env bash
+
+## ファイルの内容
+# このファイルはLinux用のSHAREVOXインストールスクリプトです。
+# 実行権限を与えてからこのファイルをダブルクリックするか、後述の方法を使ってターミナルで実行してください。
+
+## ダブルクリックでインストールを実行する方法
+# 1. このファイルを閉じる
+# 2. ローンチ左上の「ファイル」→「設定」→「動作」→「実行可能なテキストファイル」を「どうするか確認する」にする
+# 3. ファイルを右クリック→「プロパティ」→「アクセス権」→「プログラムとして実行可能」にチェックを入れる
+# 4. ファイルをタブルクリックする
+
+## ターミナルでインストールを実行する
+# 1. ターミナルを起動する
+# 2. 次のように入力して実行する
+#    chmod +x [ファイル名].sh
+#    ./[ファイル名].sh
+
+set -euo pipefail
+
+if ! command -v curl &>/dev/null; then
+    cat <<'EOS'
+* curl コマンドが見つかりません。
+以下のコマンドを実行してください。
+Ubuntu/Debian:
+    sudo apt install curl
+CentOS/Fedora:
+    sudo dnf install curl
+もしくは
+    sudo yum install curl
+EOS
+    sleep 365d
+    exit 1
+fi
+
+curl -fsSL https://raw.githubusercontent.com/SHAREVOX/sharevox/${
+          config.RELEASED_VERSION
+        }/build/installer_linux.sh > tmp_sharevox_installer.sh
+VERSION=${config.RELEASED_VERSION} NAME=${
+          both ? 'linux-nvidia-appimage' : 'linux-cpu-appimage'
+        } bash tmp_sharevox_installer.sh
+rm tmp_sharevox_installer.sh
+`,
+      ],
+      { type: 'text/plain' }
+    )
+  )
+}
+
 const downloadUrls = {
   win: {
     both: config.WINDOWS_DIRECTML_DOWNLOAD_URL,
@@ -22,8 +75,8 @@ const downloadUrls = {
     cpu: config.MAC_CPU_DOWNLOAD_URL,
   },
   linux: {
-    both: config.LINUX_CUDA_DOWNLOAD_URL,
-    cpu: config.LINUX_CPU_DOWNLOAD_URL,
+    both: '',
+    cpu: '',
   },
 }
 
@@ -41,6 +94,11 @@ const DownloadModal = () => {
     buttonBaseClass + ' text-primary border-primary bg-white'
   const disabledButtonClass =
     buttonBaseClass + ' text-gray-400 border-gray-400 bg-white cursor-no-drop'
+
+  useEffect(() => {
+    downloadUrls.linux.both = linuxInstallScript(true)
+    downloadUrls.linux.cpu = linuxInstallScript(false)
+  })
 
   const downloadModal: React.FC = () => {
     return (
@@ -156,6 +214,13 @@ const DownloadModal = () => {
                 <a
                   href={downloadUrls[osType][supportMode]!}
                   className={selectedButtonClass}
+                  download={
+                    osType === 'linux'
+                      ? `sharevox_installer_${
+                          supportMode == 'cpu' ? 'cpu' : 'nvidia'
+                        }_${config.RELEASED_VERSION}.sh`
+                      : undefined
+                  }
                   onClick={close}
                 >
                   ダウンロード
