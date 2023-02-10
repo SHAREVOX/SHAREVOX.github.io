@@ -66,25 +66,44 @@ rm tmp_sharevox_installer.sh
 }
 
 const downloadUrls = {
-  win: {
-    both: config.WINDOWS_DIRECTML_DOWNLOAD_URL,
-    cpu: config.WINDOWS_CPU_DOWNLOAD_URL,
+  installer: {
+    win: {
+      both: config.WINDOWS_DIRECTML_DOWNLOAD_URL,
+      cpu: config.WINDOWS_CPU_DOWNLOAD_URL,
+    },
+    mac: {
+      both: null,
+      cpu: config.MAC_CPU_DOWNLOAD_URL,
+    },
+    linux: {
+      both: '',
+      cpu: '',
+    },
   },
-  mac: {
-    both: null,
-    cpu: config.MAC_CPU_DOWNLOAD_URL,
-  },
-  linux: {
-    both: '',
-    cpu: '',
+  vvpp: {
+    win: {
+      both: config.WINDOWS_DIRECTML_VVPP_DOWNLOAD_URL,
+      cpu: config.WINDOWS_CPU_VVPP_DOWNLOAD_URL,
+    },
+    mac: {
+      both: null,
+      cpu: config.MAC_CPU_VVPP_DOWNLOAD_URL,
+    },
+    linux: {
+      both: config.LINUX_CUDA_VVPP_DOWNLOAD_URL,
+      cpu: config.LINUX_CPU_VVPP_DOWNLOAD_URL,
+    },
   },
 }
 
 const DownloadModal = () => {
   const [Modal, open, close, isOpen] = useModal('root')
-  const [osType, setOsType] = useState<keyof typeof downloadUrls>('win')
+  const [packageType, setPackageType] =
+    useState<keyof typeof downloadUrls>('installer')
+  const [osType, setOsType] =
+    useState<keyof typeof downloadUrls.installer>('win')
   const [supportMode, setSupportMode] =
-    useState<keyof typeof downloadUrls.win>('both')
+    useState<keyof typeof downloadUrls.installer.win>('both')
 
   const buttonBaseClass =
     'py-1.5 px-2 mx-4 rounded-lg border-solid border-[0.5px] '
@@ -96,8 +115,8 @@ const DownloadModal = () => {
     buttonBaseClass + ' text-gray-400 border-gray-400 bg-white cursor-no-drop'
 
   useEffect(() => {
-    downloadUrls.linux.both = linuxInstallScript(true)
-    downloadUrls.linux.cpu = linuxInstallScript(false)
+    downloadUrls.installer.linux.both = linuxInstallScript(true)
+    downloadUrls.installer.linux.cpu = linuxInstallScript(false)
   })
 
   const downloadModal: React.FC = () => {
@@ -114,6 +133,37 @@ const DownloadModal = () => {
               </div>
             </div>
             <div className="text-center justify-center m-4">
+              <div className="flex flex-row my-1.5">
+                <div className="flex text-xl w-full">
+                  <div className="flex items-center justify-center my-3 w-1/4">
+                    パッケージ
+                  </div>
+                  <div className="flex flex-col text-xl w-3/4">
+                    <div className="flex h-full items-center flex-row flex-wrap mx-auto">
+                      <button
+                        className={
+                          packageType === 'installer'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => setPackageType('installer')}
+                      >
+                        インストーラー
+                      </button>
+                      <button
+                        className={
+                          packageType === 'vvpp'
+                            ? selectedButtonClass
+                            : unselectedButtonClass
+                        }
+                        onClick={() => setPackageType('vvpp')}
+                      >
+                        VVPP
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="flex flex-row my-1.5">
                 <div className="flex text-xl w-full">
                   <div className="flex items-center justify-center my-3 w-1/4">
@@ -212,7 +262,7 @@ const DownloadModal = () => {
             <div className="flex flex-row text-xl font-bold">
               <div className="flex ml-auto items-center">
                 <a
-                  href={downloadUrls[osType][supportMode]!}
+                  href={downloadUrls[packageType][osType][supportMode]!}
                   className={selectedButtonClass}
                   download={
                     osType === 'linux'
