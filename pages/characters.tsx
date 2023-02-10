@@ -29,6 +29,9 @@ export const getStaticProps = async () => {
     'public/chatacters/official_0_003.wav',
     'base64'
   )
+  const amiNormal1V2 = fs.readFileSync('public/chatacters/7_001.wav', 'base64')
+  const amiNormal2V2 = fs.readFileSync('public/chatacters/7_002.wav', 'base64')
+  const amiNormal3V2 = fs.readFileSync('public/chatacters/7_003.wav', 'base64')
   const amiJoy1 = fs.readFileSync(
     'public/chatacters/official_1_001.wav',
     'base64'
@@ -41,6 +44,9 @@ export const getStaticProps = async () => {
     'public/chatacters/official_1_003.wav',
     'base64'
   )
+  const amiJoy1V2 = fs.readFileSync('public/chatacters/8_001.wav', 'base64')
+  const amiJoy2V2 = fs.readFileSync('public/chatacters/8_002.wav', 'base64')
+  const amiJoy3V2 = fs.readFileSync('public/chatacters/8_003.wav', 'base64')
   const amiAngry1 = fs.readFileSync(
     'public/chatacters/official_2_001.wav',
     'base64'
@@ -53,6 +59,9 @@ export const getStaticProps = async () => {
     'public/chatacters/official_2_003.wav',
     'base64'
   )
+  const amiAngry1V2 = fs.readFileSync('public/chatacters/9_001.wav', 'base64')
+  const amiAngry2V2 = fs.readFileSync('public/chatacters/9_002.wav', 'base64')
+  const amiAngry3V2 = fs.readFileSync('public/chatacters/9_003.wav', 'base64')
   const amiSadness1 = fs.readFileSync(
     'public/chatacters/official_3_001.wav',
     'base64'
@@ -65,28 +74,64 @@ export const getStaticProps = async () => {
     'public/chatacters/official_3_003.wav',
     'base64'
   )
-  const tsukuyomiNormal1 = fs.readFileSync(
+  const amiSadness1V2 = fs.readFileSync(
+    'public/chatacters/10_001.wav',
+    'base64'
+  )
+  const amiSadness2V2 = fs.readFileSync(
+    'public/chatacters/10_002.wav',
+    'base64'
+  )
+  const amiSadness3V2 = fs.readFileSync(
+    'public/chatacters/10_003.wav',
+    'base64'
+  )
+  const tsukuyomiOshitoyaka1 = fs.readFileSync(
     'public/chatacters/official_4_001.wav',
     'base64'
   )
-  const tsukuyomiNormal2 = fs.readFileSync(
+  const tsukuyomiOshitoyaka2 = fs.readFileSync(
     'public/chatacters/official_4_002.wav',
     'base64'
   )
-  const tsukuyomiNormal3 = fs.readFileSync(
+  const tsukuyomiOshitoyaka3 = fs.readFileSync(
     'public/chatacters/official_4_003.wav',
     'base64'
   )
-  const hakuchiNormal1 = fs.readFileSync(
+  const tsukuyomiOshitoyaka1V2 = fs.readFileSync(
+    'public/chatacters/11_001.wav',
+    'base64'
+  )
+  const tsukuyomiOshitoyaka2V2 = fs.readFileSync(
+    'public/chatacters/11_002.wav',
+    'base64'
+  )
+  const tsukuyomiOshitoyaka3V2 = fs.readFileSync(
+    'public/chatacters/11_003.wav',
+    'base64'
+  )
+  const hakuchiKyogi1 = fs.readFileSync(
     'public/chatacters/official_5_001.wav',
     'base64'
   )
-  const hakuchiNormal2 = fs.readFileSync(
+  const hakuchiKyogi2 = fs.readFileSync(
     'public/chatacters/official_5_002.wav',
     'base64'
   )
-  const hakuchiNormal3 = fs.readFileSync(
+  const hakuchiKyogi3 = fs.readFileSync(
     'public/chatacters/official_5_003.wav',
+    'base64'
+  )
+  const hakuchiKyogi1V2 = fs.readFileSync(
+    'public/chatacters/13_001.wav',
+    'base64'
+  )
+  const hakuchiKyogi2V2 = fs.readFileSync(
+    'public/chatacters/13_002.wav',
+    'base64'
+  )
+  const hakuchiKyogi3V2 = fs.readFileSync(
+    'public/chatacters/13_003.wav',
     'base64'
   )
   const developerNormal1 = fs.readFileSync(
@@ -99,6 +144,18 @@ export const getStaticProps = async () => {
   )
   const developerNormal3 = fs.readFileSync(
     'public/chatacters/official_6_003.wav',
+    'base64'
+  )
+  const developerNormal1V2 = fs.readFileSync(
+    'public/chatacters/12_001.wav',
+    'base64'
+  )
+  const developerNormal2V2 = fs.readFileSync(
+    'public/chatacters/12_002.wav',
+    'base64'
+  )
+  const developerNormal3V2 = fs.readFileSync(
+    'public/chatacters/12_003.wav',
     'base64'
   )
 
@@ -120,9 +177,28 @@ export const getStaticProps = async () => {
       amiJoy: [amiJoy1, amiJoy2, amiJoy3],
       amiAngry: [amiAngry1, amiAngry2, amiAngry3],
       amiSadness: [amiSadness1, amiSadness2, amiSadness3],
-      tsukuyomiNormal: [tsukuyomiNormal1, tsukuyomiNormal2, tsukuyomiNormal3],
-      hakuchiNormal: [hakuchiNormal1, hakuchiNormal2, hakuchiNormal3],
+      tsukuyomiOshitoyaka: [
+        tsukuyomiOshitoyaka1,
+        tsukuyomiOshitoyaka2,
+        tsukuyomiOshitoyaka3,
+      ],
+      hakuchiKyogi: [hakuchiKyogi1, hakuchiKyogi2, hakuchiKyogi3],
       developerNormal: [developerNormal1, developerNormal2, developerNormal3],
+      amiNormalV2: [amiNormal1V2, amiNormal2V2, amiNormal3V2],
+      amiJoyV2: [amiJoy1V2, amiJoy2V2, amiJoy3V2],
+      amiAngryV2: [amiAngry1V2, amiAngry2V2, amiAngry3V2],
+      amiSadnessV2: [amiSadness1V2, amiSadness2V2, amiSadness3V2],
+      tsukuyomiOshitoyakaV2: [
+        tsukuyomiOshitoyaka1V2,
+        tsukuyomiOshitoyaka2V2,
+        tsukuyomiOshitoyaka3V2,
+      ],
+      hakuchiKyogiV2: [hakuchiKyogi1V2, hakuchiKyogi2V2, hakuchiKyogi3V2],
+      developerNormalV2: [
+        developerNormal1V2,
+        developerNormal2V2,
+        developerNormal3V2,
+      ],
       amiPolicy,
       tsukuyomiPolicy,
       hakuchiPolicy,
@@ -136,9 +212,16 @@ type Props = {
   amiJoy: AudioSampleArray
   amiAngry: AudioSampleArray
   amiSadness: AudioSampleArray
-  tsukuyomiNormal: AudioSampleArray
-  hakuchiNormal: AudioSampleArray
+  tsukuyomiOshitoyaka: AudioSampleArray
+  hakuchiKyogi: AudioSampleArray
   developerNormal: AudioSampleArray
+  amiNormalV2: AudioSampleArray
+  amiJoyV2: AudioSampleArray
+  amiAngryV2: AudioSampleArray
+  amiSadnessV2: AudioSampleArray
+  tsukuyomiOshitoyakaV2: AudioSampleArray
+  hakuchiKyogiV2: AudioSampleArray
+  developerNormalV2: AudioSampleArray
   amiPolicy: string
   tsukuyomiPolicy: string
   hakuchiPolicy: string
@@ -150,15 +233,38 @@ const Characters: NextPage<Props> = ({
   amiJoy,
   amiAngry,
   amiSadness,
-  tsukuyomiNormal,
-  hakuchiNormal,
+  tsukuyomiOshitoyaka,
+  hakuchiKyogi,
   developerNormal,
+  amiNormalV2,
+  amiJoyV2,
+  amiAngryV2,
+  amiSadnessV2,
+  tsukuyomiOshitoyakaV2,
+  hakuchiKyogiV2,
+  developerNormalV2,
   amiPolicy,
   tsukuyomiPolicy,
   hakuchiPolicy,
   developerPolicy,
 }) => {
   const koharuneAmiSamples: AudioSamples = [
+    {
+      style: 'ノーマルv2',
+      samples: amiNormalV2,
+    },
+    {
+      style: '喜びv2',
+      samples: amiJoyV2,
+    },
+    {
+      style: '怒りv2',
+      samples: amiAngryV2,
+    },
+    {
+      style: '悲しみv2',
+      samples: amiSadnessV2,
+    },
     {
       style: 'ノーマル',
       samples: amiNormal,
@@ -178,17 +284,29 @@ const Characters: NextPage<Props> = ({
   ]
   const tsukuyomiChanSamples: AudioSamples = [
     {
-      style: 'ノーマル',
-      samples: tsukuyomiNormal,
+      style: 'おしとやかv2',
+      samples: tsukuyomiOshitoyakaV2,
+    },
+    {
+      style: 'おしとやか',
+      samples: tsukuyomiOshitoyaka,
     },
   ]
   const hakuchiSamples: AudioSamples = [
     {
-      style: 'ノーマル',
-      samples: hakuchiNormal,
+      style: '虚偽v2',
+      samples: hakuchiKyogiV2,
+    },
+    {
+      style: '虚偽',
+      samples: hakuchiKyogi,
     },
   ]
   const developerSamples: AudioSamples = [
+    {
+      style: 'ノーマルv2',
+      samples: developerNormalV2,
+    },
     {
       style: 'ノーマル',
       samples: developerNormal,
@@ -234,7 +352,7 @@ const Characters: NextPage<Props> = ({
           openModal={openModal}
         />
         <CharacterCard
-          name="開発者"
+          name="Yくん/開発者"
           image={DeveloperImage}
           imageAlt="developer"
           audioSamples={developerSamples}
