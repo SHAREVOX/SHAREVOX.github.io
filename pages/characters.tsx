@@ -11,194 +11,26 @@ import CharacterCard, {
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import markdownToHtml from '@/lib/markdownTranslator'
-import DeveloperImage from '@/public/chatacters/developer.png'
-import HakuchiImage from '@/public/chatacters/hakuchi.png'
-import KoharuneAmiImage from '@/public/chatacters/koharune-ami.png'
-import TsukuyomiChanImage from '@/public/chatacters/tsukuyomi-chan.png'
+import DeveloperImage from '@/public/characters_data/developer.png'
+import HakuchiImage from '@/public/characters_data/hakuchi.png'
+import KoharuneAmiImage from '@/public/characters_data/koharune-ami.png'
+import TsukuyomiChanImage from '@/public/characters_data/tsukuyomi-chan.png'
 
 export const getStaticProps = async () => {
-  const amiNormal1 = fs.readFileSync(
-    'public/chatacters/official_0_001.wav',
-    'base64'
-  )
-  const amiNormal2 = fs.readFileSync(
-    'public/chatacters/official_0_002.wav',
-    'base64'
-  )
-  const amiNormal3 = fs.readFileSync(
-    'public/chatacters/official_0_003.wav',
-    'base64'
-  )
-  const amiNormal1V2 = fs.readFileSync('public/chatacters/7_001.wav', 'base64')
-  const amiNormal2V2 = fs.readFileSync('public/chatacters/7_002.wav', 'base64')
-  const amiNormal3V2 = fs.readFileSync('public/chatacters/7_003.wav', 'base64')
-  const amiJoy1 = fs.readFileSync(
-    'public/chatacters/official_1_001.wav',
-    'base64'
-  )
-  const amiJoy2 = fs.readFileSync(
-    'public/chatacters/official_1_002.wav',
-    'base64'
-  )
-  const amiJoy3 = fs.readFileSync(
-    'public/chatacters/official_1_003.wav',
-    'base64'
-  )
-  const amiJoy1V2 = fs.readFileSync('public/chatacters/8_001.wav', 'base64')
-  const amiJoy2V2 = fs.readFileSync('public/chatacters/8_002.wav', 'base64')
-  const amiJoy3V2 = fs.readFileSync('public/chatacters/8_003.wav', 'base64')
-  const amiAngry1 = fs.readFileSync(
-    'public/chatacters/official_2_001.wav',
-    'base64'
-  )
-  const amiAngry2 = fs.readFileSync(
-    'public/chatacters/official_2_002.wav',
-    'base64'
-  )
-  const amiAngry3 = fs.readFileSync(
-    'public/chatacters/official_2_003.wav',
-    'base64'
-  )
-  const amiAngry1V2 = fs.readFileSync('public/chatacters/9_001.wav', 'base64')
-  const amiAngry2V2 = fs.readFileSync('public/chatacters/9_002.wav', 'base64')
-  const amiAngry3V2 = fs.readFileSync('public/chatacters/9_003.wav', 'base64')
-  const amiSadness1 = fs.readFileSync(
-    'public/chatacters/official_3_001.wav',
-    'base64'
-  )
-  const amiSadness2 = fs.readFileSync(
-    'public/chatacters/official_3_002.wav',
-    'base64'
-  )
-  const amiSadness3 = fs.readFileSync(
-    'public/chatacters/official_3_003.wav',
-    'base64'
-  )
-  const amiSadness1V2 = fs.readFileSync(
-    'public/chatacters/10_001.wav',
-    'base64'
-  )
-  const amiSadness2V2 = fs.readFileSync(
-    'public/chatacters/10_002.wav',
-    'base64'
-  )
-  const amiSadness3V2 = fs.readFileSync(
-    'public/chatacters/10_003.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka1 = fs.readFileSync(
-    'public/chatacters/official_4_001.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka2 = fs.readFileSync(
-    'public/chatacters/official_4_002.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka3 = fs.readFileSync(
-    'public/chatacters/official_4_003.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka1V2 = fs.readFileSync(
-    'public/chatacters/11_001.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka2V2 = fs.readFileSync(
-    'public/chatacters/11_002.wav',
-    'base64'
-  )
-  const tsukuyomiOshitoyaka3V2 = fs.readFileSync(
-    'public/chatacters/11_003.wav',
-    'base64'
-  )
-  const hakuchiKyogi1 = fs.readFileSync(
-    'public/chatacters/official_5_001.wav',
-    'base64'
-  )
-  const hakuchiKyogi2 = fs.readFileSync(
-    'public/chatacters/official_5_002.wav',
-    'base64'
-  )
-  const hakuchiKyogi3 = fs.readFileSync(
-    'public/chatacters/official_5_003.wav',
-    'base64'
-  )
-  const hakuchiKyogi1V2 = fs.readFileSync(
-    'public/chatacters/13_001.wav',
-    'base64'
-  )
-  const hakuchiKyogi2V2 = fs.readFileSync(
-    'public/chatacters/13_002.wav',
-    'base64'
-  )
-  const hakuchiKyogi3V2 = fs.readFileSync(
-    'public/chatacters/13_003.wav',
-    'base64'
-  )
-  const developerNormal1 = fs.readFileSync(
-    'public/chatacters/official_6_001.wav',
-    'base64'
-  )
-  const developerNormal2 = fs.readFileSync(
-    'public/chatacters/official_6_002.wav',
-    'base64'
-  )
-  const developerNormal3 = fs.readFileSync(
-    'public/chatacters/official_6_003.wav',
-    'base64'
-  )
-  const developerNormal1V2 = fs.readFileSync(
-    'public/chatacters/12_001.wav',
-    'base64'
-  )
-  const developerNormal2V2 = fs.readFileSync(
-    'public/chatacters/12_002.wav',
-    'base64'
-  )
-  const developerNormal3V2 = fs.readFileSync(
-    'public/chatacters/12_003.wav',
-    'base64'
-  )
-
   const amiPolicy = await markdownToHtml(
-    fs.readFileSync('public/chatacters/koharune-ami-policy.md', 'utf8')
+    fs.readFileSync('public/characters_data/koharune-ami-policy.md', 'utf8')
   )
   const tsukuyomiPolicy = await markdownToHtml(
-    fs.readFileSync('public/chatacters/tsukuyomi-chan-policy.md', 'utf8')
+    fs.readFileSync('public/characters_data/tsukuyomi-chan-policy.md', 'utf8')
   )
   const hakuchiPolicy = await markdownToHtml(
-    fs.readFileSync('public/chatacters/hakuchi-policy.md', 'utf8')
+    fs.readFileSync('public/characters_data/hakuchi-policy.md', 'utf8')
   )
   const developerPolicy = await markdownToHtml(
-    fs.readFileSync('public/chatacters/developer-policy.md', 'utf8')
+    fs.readFileSync('public/characters_data/developer-policy.md', 'utf8')
   )
   return {
     props: {
-      amiNormal: [amiNormal1, amiNormal2, amiNormal3],
-      amiJoy: [amiJoy1, amiJoy2, amiJoy3],
-      amiAngry: [amiAngry1, amiAngry2, amiAngry3],
-      amiSadness: [amiSadness1, amiSadness2, amiSadness3],
-      tsukuyomiOshitoyaka: [
-        tsukuyomiOshitoyaka1,
-        tsukuyomiOshitoyaka2,
-        tsukuyomiOshitoyaka3,
-      ],
-      hakuchiKyogi: [hakuchiKyogi1, hakuchiKyogi2, hakuchiKyogi3],
-      developerNormal: [developerNormal1, developerNormal2, developerNormal3],
-      amiNormalV2: [amiNormal1V2, amiNormal2V2, amiNormal3V2],
-      amiJoyV2: [amiJoy1V2, amiJoy2V2, amiJoy3V2],
-      amiAngryV2: [amiAngry1V2, amiAngry2V2, amiAngry3V2],
-      amiSadnessV2: [amiSadness1V2, amiSadness2V2, amiSadness3V2],
-      tsukuyomiOshitoyakaV2: [
-        tsukuyomiOshitoyaka1V2,
-        tsukuyomiOshitoyaka2V2,
-        tsukuyomiOshitoyaka3V2,
-      ],
-      hakuchiKyogiV2: [hakuchiKyogi1V2, hakuchiKyogi2V2, hakuchiKyogi3V2],
-      developerNormalV2: [
-        developerNormal1V2,
-        developerNormal2V2,
-        developerNormal3V2,
-      ],
       amiPolicy,
       tsukuyomiPolicy,
       hakuchiPolicy,
@@ -208,20 +40,6 @@ export const getStaticProps = async () => {
 }
 
 type Props = {
-  amiNormal: AudioSampleArray
-  amiJoy: AudioSampleArray
-  amiAngry: AudioSampleArray
-  amiSadness: AudioSampleArray
-  tsukuyomiOshitoyaka: AudioSampleArray
-  hakuchiKyogi: AudioSampleArray
-  developerNormal: AudioSampleArray
-  amiNormalV2: AudioSampleArray
-  amiJoyV2: AudioSampleArray
-  amiAngryV2: AudioSampleArray
-  amiSadnessV2: AudioSampleArray
-  tsukuyomiOshitoyakaV2: AudioSampleArray
-  hakuchiKyogiV2: AudioSampleArray
-  developerNormalV2: AudioSampleArray
   amiPolicy: string
   tsukuyomiPolicy: string
   hakuchiPolicy: string
@@ -229,20 +47,6 @@ type Props = {
 }
 
 const Characters: NextPage<Props> = ({
-  amiNormal,
-  amiJoy,
-  amiAngry,
-  amiSadness,
-  tsukuyomiOshitoyaka,
-  hakuchiKyogi,
-  developerNormal,
-  amiNormalV2,
-  amiJoyV2,
-  amiAngryV2,
-  amiSadnessV2,
-  tsukuyomiOshitoyakaV2,
-  hakuchiKyogiV2,
-  developerNormalV2,
   amiPolicy,
   tsukuyomiPolicy,
   hakuchiPolicy,
@@ -251,65 +55,121 @@ const Characters: NextPage<Props> = ({
   const koharuneAmiSamples: AudioSamples = [
     {
       style: 'ノーマルv2',
-      samples: amiNormalV2,
+      samples: [
+        'characters_data/7_001.wav',
+        'characters_data/7_002.wav',
+        'characters_data/7_003.wav',
+      ],
     },
     {
       style: '喜びv2',
-      samples: amiJoyV2,
+      samples: [
+        'characters_data/8_001.wav',
+        'characters_data/8_002.wav',
+        'characters_data/8_003.wav',
+      ],
     },
     {
       style: '怒りv2',
-      samples: amiAngryV2,
+      samples: [
+        'characters_data/9_001.wav',
+        'characters_data/9_002.wav',
+        'characters_data/9_003.wav',
+      ],
     },
     {
       style: '悲しみv2',
-      samples: amiSadnessV2,
+      samples: [
+        'characters_data/10_001.wav',
+        'characters_data/10_002.wav',
+        'characters_data/10_003.wav',
+      ],
     },
     {
       style: 'ノーマル',
-      samples: amiNormal,
+      samples: [
+        'characters_data/official_0_001.wav',
+        'characters_data/official_0_002.wav',
+        'characters_data/official_0_003.wav',
+      ],
     },
     {
       style: '喜び',
-      samples: amiJoy,
+      samples: [
+        'characters_data/official_1_001.wav',
+        'characters_data/official_1_002.wav',
+        'characters_data/official_1_003.wav',
+      ],
     },
     {
       style: '怒り',
-      samples: amiAngry,
+      samples: [
+        'characters_data/official_2_001.wav',
+        'characters_data/official_2_002.wav',
+        'characters_data/official_2_003.wav',
+      ],
     },
     {
       style: '悲しみ',
-      samples: amiSadness,
+      samples: [
+        'characters_data/official_3_001.wav',
+        'characters_data/official_3_002.wav',
+        'characters_data/official_3_003.wav',
+      ],
     },
   ]
   const tsukuyomiChanSamples: AudioSamples = [
     {
       style: 'おしとやかv2',
-      samples: tsukuyomiOshitoyakaV2,
+      samples: [
+        'characters_data/11_001.wav',
+        'characters_data/11_002.wav',
+        'characters_data/11_003.wav',
+      ],
     },
     {
       style: 'おしとやか',
-      samples: tsukuyomiOshitoyaka,
+      samples: [
+        'characters_data/official_4_001.wav',
+        'characters_data/official_4_002.wav',
+        'characters_data/official_4_003.wav',
+      ],
     },
   ]
   const hakuchiSamples: AudioSamples = [
     {
       style: '虚偽v2',
-      samples: hakuchiKyogiV2,
+      samples: [
+        'characters_data/13_001.wav',
+        'characters_data/13_002.wav',
+        'characters_data/13_003.wav',
+      ],
     },
     {
       style: '虚偽',
-      samples: hakuchiKyogi,
+      samples: [
+        'characters_data/official_5_001.wav',
+        'characters_data/official_5_002.wav',
+        'characters_data/official_5_003.wav',
+      ],
     },
   ]
   const developerSamples: AudioSamples = [
     {
       style: 'ノーマルv2',
-      samples: developerNormalV2,
+      samples: [
+        'characters_data/12_001.wav',
+        'characters_data/12_002.wav',
+        'characters_data/12_003.wav',
+      ],
     },
     {
       style: 'ノーマル',
-      samples: developerNormal,
+      samples: [
+        'characters_data/official_6_001.wav',
+        'characters_data/official_6_002.wav',
+        'characters_data/official_6_003.wav',
+      ],
     },
   ]
 
