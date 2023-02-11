@@ -11,7 +11,7 @@ const AudioPlayer: React.FC<Props> = ({ audioSrc }) => {
   const [isReady, setIsReady] = useState(false)
 
   useEffect(() => {
-    setAudio(new Audio('data:audio/wav;base64,' + audioSrc))
+    setAudio(new Audio(audioSrc))
   }, [audioSrc])
 
   useEffect(() => {
