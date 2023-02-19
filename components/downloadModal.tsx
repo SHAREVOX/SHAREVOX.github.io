@@ -253,7 +253,11 @@ const DownloadModal = () => {
             </div>
             <div className="flex flex-row text-sm">
               <div className="flex flex-col mr-auto">
-                <span>※Mac版はGPUモード未対応です</span>
+                <span>
+                  ※他のボイボ系エディタにSHAREVOXエンジンを導入する場合、VVPP(VOICEVOX
+                  Plugin Package)をご利用ください。
+                </span>
+                <span>※Mac版はGPUモード未対応です。</span>
                 <span>
                   ※GPUモードの方が高速・快適に動作しますが、対応するGPUが必要です。
                 </span>
