@@ -11,9 +11,14 @@ import CharacterCard, {
 import Footer from '@/components/footer'
 import Header from '@/components/header'
 import markdownToHtml from '@/lib/markdownTranslator'
+import AbeHirohaImage from '@/public/characters_data/abe-hiroha.png'
 import DeveloperImage from '@/public/characters_data/developer.png'
 import HakuchiImage from '@/public/characters_data/hakuchi.png'
+import kazahanaYukiImage from '@/public/characters_data/kazahana-yuki.png'
 import KoharuneAmiImage from '@/public/characters_data/koharune-ami.png'
+import LagopusBlackImage from '@/public/characters_data/lagopus-black.png'
+import LagopusWhiteImage from '@/public/characters_data/lagopus-white.png'
+import SuzunoImage from '@/public/characters_data/suzuno.png'
 import TsukuyomiChanImage from '@/public/characters_data/tsukuyomi-chan.png'
 
 export const getStaticProps = async () => {
@@ -29,12 +34,32 @@ export const getStaticProps = async () => {
   const developerPolicy = await markdownToHtml(
     fs.readFileSync('public/characters_data/developer-policy.md', 'utf8')
   )
+  const lagopusWhitePolicy = await markdownToHtml(
+    fs.readFileSync('public/characters_data/lagopus-white-policy.md', 'utf8')
+  )
+  const lagopusBlackPolicy = await markdownToHtml(
+    fs.readFileSync('public/characters_data/lagopus-black-policy.md', 'utf8')
+  )
+  const kazahanaYukiPolicy = await markdownToHtml(
+    fs.readFileSync('public/characters_data/kazahana-yuki-policy.md', 'utf8')
+  )
+  const abeHirohaPolicy = await markdownToHtml(
+    fs.readFileSync('public/characters_data/abe-hiroha-policy.md', 'utf8')
+  )
+  const suzunoPolicy = await markdownToHtml(
+    fs.readFileSync('public/characters_data/suzuno-policy.md', 'utf8')
+  )
   return {
     props: {
       amiPolicy,
       tsukuyomiPolicy,
       hakuchiPolicy,
       developerPolicy,
+      lagopusWhitePolicy,
+      lagopusBlackPolicy,
+      kazahanaYukiPolicy,
+      abeHirohaPolicy,
+      suzunoPolicy,
     },
   }
 }
@@ -44,6 +69,11 @@ type Props = {
   tsukuyomiPolicy: string
   hakuchiPolicy: string
   developerPolicy: string
+  lagopusWhitePolicy: string
+  lagopusBlackPolicy: string
+  kazahanaYukiPolicy: string
+  abeHirohaPolicy: string
+  suzunoPolicy: string
 }
 
 const Characters: NextPage<Props> = ({
@@ -51,8 +81,45 @@ const Characters: NextPage<Props> = ({
   tsukuyomiPolicy,
   hakuchiPolicy,
   developerPolicy,
+  lagopusWhitePolicy,
+  lagopusBlackPolicy,
+  kazahanaYukiPolicy,
+  abeHirohaPolicy,
+  suzunoPolicy,
 }) => {
   const koharuneAmiSamples: AudioSamples = [
+    {
+      style: 'ノーマルv3',
+      samples: [
+        'characters_data/14_001.wav',
+        'characters_data/14_002.wav',
+        'characters_data/14_003.wav',
+      ],
+    },
+    {
+      style: '喜びv3',
+      samples: [
+        'characters_data/15_001.wav',
+        'characters_data/15_002.wav',
+        'characters_data/15_003.wav',
+      ],
+    },
+    {
+      style: '怒りv3',
+      samples: [
+        'characters_data/16_001.wav',
+        'characters_data/16_002.wav',
+        'characters_data/16_003.wav',
+      ],
+    },
+    {
+      style: '悲しみv3',
+      samples: [
+        'characters_data/17_001.wav',
+        'characters_data/17_002.wav',
+        'characters_data/17_003.wav',
+      ],
+    },
     {
       style: 'ノーマルv2',
       samples: [
@@ -120,6 +187,14 @@ const Characters: NextPage<Props> = ({
   ]
   const tsukuyomiChanSamples: AudioSamples = [
     {
+      style: 'おしとやかv3',
+      samples: [
+        'characters_data/18_001.wav',
+        'characters_data/18_002.wav',
+        'characters_data/18_003.wav',
+      ],
+    },
+    {
       style: 'おしとやかv2',
       samples: [
         'characters_data/11_001.wav',
@@ -137,6 +212,14 @@ const Characters: NextPage<Props> = ({
     },
   ]
   const hakuchiSamples: AudioSamples = [
+    {
+      style: '虚偽v3',
+      samples: [
+        'characters_data/20_001.wav',
+        'characters_data/20_002.wav',
+        'characters_data/20_003.wav',
+      ],
+    },
     {
       style: '虚偽v2',
       samples: [
@@ -156,6 +239,14 @@ const Characters: NextPage<Props> = ({
   ]
   const developerSamples: AudioSamples = [
     {
+      style: 'ノーマルv3',
+      samples: [
+        'characters_data/19_001.wav',
+        'characters_data/19_002.wav',
+        'characters_data/19_003.wav',
+      ],
+    },
+    {
       style: 'ノーマルv2',
       samples: [
         'characters_data/12_001.wav',
@@ -169,6 +260,56 @@ const Characters: NextPage<Props> = ({
         'characters_data/official_6_001.wav',
         'characters_data/official_6_002.wav',
         'characters_data/official_6_003.wav',
+      ],
+    },
+  ]
+  const lagopusWhiteSamples: AudioSamples = [
+    {
+      style: 'ノーマル',
+      samples: [
+        'characters_data/22_001.wav',
+        'characters_data/22_002.wav',
+        'characters_data/22_003.wav',
+      ],
+    },
+  ]
+  const lagopusBlackSamples: AudioSamples = [
+    {
+      style: 'ノーマル',
+      samples: [
+        'characters_data/21_001.wav',
+        'characters_data/21_002.wav',
+        'characters_data/21_003.wav',
+      ],
+    },
+  ]
+  const kazahanaYukiSamples: AudioSamples = [
+    {
+      style: 'ノーマル',
+      samples: [
+        'characters_data/23_001.wav',
+        'characters_data/23_002.wav',
+        'characters_data/23_003.wav',
+      ],
+    },
+  ]
+  const abeHirohaSamples: AudioSamples = [
+    {
+      style: 'ノーマル',
+      samples: [
+        'characters_data/24_001.wav',
+        'characters_data/24_002.wav',
+        'characters_data/24_003.wav',
+      ],
+    },
+  ]
+  const suzunoSamples: AudioSamples = [
+    {
+      style: 'ノーマル',
+      samples: [
+        'characters_data/25_001.wav',
+        'characters_data/25_002.wav',
+        'characters_data/25_003.wav',
       ],
     },
   ]
@@ -204,7 +345,7 @@ const Characters: NextPage<Props> = ({
           openModal={openModal}
         />
         <CharacterCard
-          name="白痴ー"
+          name="白痴ー/黒聡鵜月"
           image={HakuchiImage}
           imageAlt="hakuchi-"
           audioSamples={hakuchiSamples}
@@ -217,6 +358,46 @@ const Characters: NextPage<Props> = ({
           imageAlt="developer"
           audioSamples={developerSamples}
           policy={developerPolicy}
+          openModal={openModal}
+        />
+        <CharacterCard
+          name="らごぱすホワイト"
+          image={LagopusWhiteImage}
+          imageAlt="lagopus-white"
+          audioSamples={lagopusWhiteSamples}
+          policy={lagopusWhitePolicy}
+          openModal={openModal}
+        />
+        <CharacterCard
+          name="らごぱすブラック"
+          image={LagopusBlackImage}
+          imageAlt="lagopus-black"
+          audioSamples={lagopusBlackSamples}
+          policy={lagopusBlackPolicy}
+          openModal={openModal}
+        />
+        <CharacterCard
+          name="風花ゆき"
+          image={kazahanaYukiImage}
+          imageAlt="kazahana-yuki"
+          audioSamples={kazahanaYukiSamples}
+          policy={kazahanaYukiPolicy}
+          openModal={openModal}
+        />
+        <CharacterCard
+          name="安倍広葉"
+          image={AbeHirohaImage}
+          imageAlt="abe-hiroha"
+          audioSamples={abeHirohaSamples}
+          policy={abeHirohaPolicy}
+          openModal={openModal}
+        />
+        <CharacterCard
+          name="鈴乃"
+          image={SuzunoImage}
+          imageAlt="suzuno"
+          audioSamples={suzunoSamples}
+          policy={suzunoPolicy}
           openModal={openModal}
         />
         <Modal>
