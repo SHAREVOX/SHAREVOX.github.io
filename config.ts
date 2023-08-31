@@ -1,4 +1,4 @@
-const RELEASED_VERSION = '0.2.0'
+const RELEASED_VERSION = '0.2.1'
 
 const config = {
   GITHUB_ORG_URL: 'https://github.com/SHAREVOX',
